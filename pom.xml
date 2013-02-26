@@ -2,10 +2,50 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>de.chkal.togglz.demo</groupId>
+  <groupId>org.togglz.demo</groupId>
   <artifactId>togglz-demo</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>war</packaging>
+
+  <properties>
+    <togglz.version>1.1.0.Final</togglz.version>
+    <togglz.context>togglz</togglz.context>
+    <spring.version>3.0.7.RELEASE</spring.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.togglz</groupId>
+      <artifactId>togglz-console</artifactId>
+      <version>${togglz.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.togglz</groupId>
+      <artifactId>togglz-servlet</artifactId>
+      <version>${togglz.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.togglz</groupId>
+      <artifactId>togglz-cdi</artifactId>
+      <version>${togglz.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.togglz</groupId>
+      <artifactId>togglz-spring</artifactId>
+      <version>${togglz.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.spec</groupId>
+      <artifactId>jboss-javaee-6.0</artifactId>
+      <version>3.0.0.Beta1</version>
+      <type>pom</type>      
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+  </dependencies>
 
   <build>
     <finalName>togglz-demo</finalName>
@@ -18,37 +58,17 @@
           <target>1.6</target>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <configuration>
+          <webAppConfig>
+            <contextPath>/${togglz.context}</contextPath>
+          </webAppConfig>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
-
-  <dependencies>
-
-    <dependency>
-      <groupId>org.jboss.spec</groupId>
-      <artifactId>jboss-javaee-6.0</artifactId>
-      <version>3.0.0.Beta1</version>
-      <scope>provided</scope>
-      <type>pom</type>
-    </dependency>
-
-    <dependency>
-      <groupId>de.chkal.togglz</groupId>
-      <artifactId>togglz-servlet</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>de.chkal.togglz</groupId>
-      <artifactId>togglz-cdi</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
-    
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-jdk14</artifactId>
-      <version>1.6.4</version>
-    </dependency>
-
-  </dependencies>
 
   <repositories>
     <repository>
