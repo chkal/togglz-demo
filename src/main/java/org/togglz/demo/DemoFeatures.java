@@ -10,10 +10,10 @@ public enum DemoFeatures implements Feature {
     @EnabledByDefault
     @Label("First Feature")
     FEATURE_ONE,
-    
+
     @Label("Second Feature")
     FEATURE_TWO;
-    
+
     public boolean isActive() {
         return FeatureContext.getFeatureManager().isActive(this);
     }

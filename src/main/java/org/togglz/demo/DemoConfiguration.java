@@ -1,6 +1,5 @@
 package org.togglz.demo;
 
-import org.springframework.stereotype.Component;
 import org.togglz.core.Feature;
 import org.togglz.core.manager.TogglzConfig;
 import org.togglz.core.repository.StateRepository;
@@ -9,7 +8,10 @@ import org.togglz.core.user.FeatureUser;
 import org.togglz.core.user.SimpleFeatureUser;
 import org.togglz.core.user.UserProvider;
 
-@Component
+/**
+ * This class is managed by Spring. So stuff like dependency injection will work. For this demo the bean is manually registered
+ * in applicationConfig.xml.
+ */
 public class DemoConfiguration implements TogglzConfig {
 
     public Class<? extends Feature> getFeatureClass() {
