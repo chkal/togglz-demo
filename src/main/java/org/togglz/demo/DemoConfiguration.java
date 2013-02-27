@@ -2,8 +2,6 @@ package org.togglz.demo;
 
 import java.io.File;
 
-import javax.enterprise.context.ApplicationScoped;
-
 import org.springframework.stereotype.Component;
 import org.togglz.core.Feature;
 import org.togglz.core.manager.TogglzConfig;
@@ -13,7 +11,6 @@ import org.togglz.core.user.FeatureUser;
 import org.togglz.core.user.SimpleFeatureUser;
 import org.togglz.core.user.UserProvider;
 
-@ApplicationScoped
 @Component
 public class DemoConfiguration implements TogglzConfig {
 
@@ -29,7 +26,7 @@ public class DemoConfiguration implements TogglzConfig {
         return new UserProvider() {
             @Override
             public FeatureUser getCurrentUser() {
-                return new SimpleFeatureUser("admin", true);
+                return new SimpleFeatureUser("john", true);
             }
         };
     }

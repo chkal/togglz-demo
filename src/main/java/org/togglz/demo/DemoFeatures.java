@@ -17,5 +17,5 @@ public enum DemoFeatures implements Feature {
     public boolean isActive() {
         return FeatureContext.getFeatureManager().isActive(this);
     }
-    
+
 }
