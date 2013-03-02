@@ -8,11 +8,11 @@ import org.togglz.core.context.FeatureContext;
 public enum DemoFeatures implements Feature {
 
     @EnabledByDefault
-    @Label("First Feature")
-    FEATURE_ONE,
+    @Label("Admin Feature")
+    ADMIN_FEATURE,
 
-    @Label("Second Feature")
-    FEATURE_TWO;
+    @Label("Talking Feature")
+    TALKING_FEATURE;
 
     public boolean isActive() {
         return FeatureContext.getFeatureManager().isActive(this);
