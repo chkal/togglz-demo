@@ -9,13 +9,13 @@
 
   <properties>
     <togglz.version>1.1.0.Final</togglz.version>
-    <togglz.context>togglz</togglz.context>
+    <togglz.context>togglz-demo</togglz.context>
     <spring.version>3.0.7.RELEASE</spring.version>
   </properties>
 
   <dependencies>
 
-    <!-- Togglz with admin console and Spring support -->  
+    <!-- Togglz with admin console and Spring support -->
     <dependency>
       <groupId>org.togglz</groupId>
       <artifactId>togglz-servlet</artifactId>
@@ -31,14 +31,25 @@
       <artifactId>togglz-console</artifactId>
       <version>${togglz.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.togglz</groupId>
+      <artifactId>togglz-jsf</artifactId>
+      <version>1.1.0.Final</version>
+    </dependency>
 
-    <!-- Spring container -->    
+    <dependency>
+      <groupId>org.apache.myfaces.core</groupId>
+      <artifactId>myfaces-impl</artifactId>
+      <version>2.1.10</version>
+    </dependency>
+    
+    <!-- Spring container -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
       <version>${spring.version}</version>
     </dependency>
-    
+
   </dependencies>
 
   <build>
@@ -66,7 +77,7 @@
 
   <repositories>
     <repository>
-      <id>JBOSS_NEXUS</id>
+      <id>jboss</id>
       <url>http://repository.jboss.org/nexus/content/groups/public</url>
     </repository>
   </repositories>
