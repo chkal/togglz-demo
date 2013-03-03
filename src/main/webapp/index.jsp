@@ -10,8 +10,8 @@
   </p>
 
   <ul>
-    <li><strong>FEATURE_ONE</strong>: <%=DemoFeatures.FEATURE_ONE.isActive()%></li>
-    <li><strong>FEATURE_TWO</strong>: <%=DemoFeatures.FEATURE_TWO.isActive()%></li>
+    <li><strong>ADMIN_FEATURE</strong>: <%=DemoFeatures.ADMIN_FEATURE.isActive()%></li>
+    <li><strong>TALKING_FEATURE</strong>: <%=DemoFeatures.TALKING_FEATURE.isActive()%></li>
   </ul>
 
   <p>
